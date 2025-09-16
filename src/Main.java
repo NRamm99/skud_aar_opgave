@@ -6,12 +6,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        clearConsole();
         System.out.println("Indtast årstal.");
         int year = input.nextInt();
 
         System.out.println("Indtast måned.");
         int month = input.nextInt();
 
+        clearConsole();
         if (skudAarChecker(year)) {
             System.out.println(year + " er skudår.");
         } else {
@@ -55,34 +57,27 @@ public class Main {
         }
     }
 
-    public static String monthChecker(int month){
-        switch (month){
-            case 1:
-                return "Januar";
-            case 2:
-                return "Februar";
-            case 3:
-                return "Marts";
-            case 4:
-                return "April";
-            case 5:
-                return "Maj";
-            case 6:
-                return "Juni";
-            case 7:
-                return "Juli";
-            case 8:
-                return "August";
-            case 9:
-                return "September";
-            case 10:
-                return "Oktober";
-            case 11:
-                return "November";
-            case 12:
-                return "December";
-            default:
-                return "FEJL";
+    public static String monthChecker(int month) {
+        return switch (month) {
+            case 1 -> "Januar";
+            case 2 -> "Februar";
+            case 3 -> "Marts";
+            case 4 -> "April";
+            case 5 -> "Maj";
+            case 6 -> "Juni";
+            case 7 -> "Juli";
+            case 8 -> "August";
+            case 9 -> "September";
+            case 10 -> "Oktober";
+            case 11 -> "November";
+            case 12 -> "December";
+            default -> "FEJL";
+        };
+    }
+
+    public static void clearConsole() {
+        for (int n = 0; n < 20; n++) {
+            System.out.println();
         }
     }
 }
